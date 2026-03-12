@@ -1,16 +1,17 @@
 <idea-plugin>
-    <id>com.l10n.editor.plugin</id>
-    <name>L10n Editor</name>
-    <vendor email="support@example.com" url="https://example.com">L10n Editor</vendor>
+    <id>com.l10n.editor.jetbrains</id>
+    <name>L10n Editor for JetBrains</name>
+    <vendor email="support@example.com" url="https://github.com/omigaZen/L10nEditorJetBrains">L10n Editor</vendor>
 
     <description><![CDATA[
-    L10n localization file editor with AI translation support.
+    L10n localization file editor plugin for JetBrains IDEs with AI translation support.
 
     Features:
-    - TSV-based l10n file format
+    - TSV-based l10n file format (*.l10n.tsv)
     - AI translation (OpenAI, Claude, Baidu)
+    - Inlay hints showing "AI:" prefix for AI-translated cells
     - C# code generation
-    - Toolbar actions for common operations
+    - Editor toolbar with common operations
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>

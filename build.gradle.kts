@@ -17,7 +17,7 @@ repositories {
 }
 
 intellijPlatform {
-    projectName = "L10nEditorPlugin"
+    projectName = "L10nEditorJetBrains"
 
     pluginConfiguration {
         ideaVersion {

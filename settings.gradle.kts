@@ -1,1 +1,1 @@
-rootProject.name = "L10nEditorPlugin"
+rootProject.name = "L10nEditorJetBrains"
