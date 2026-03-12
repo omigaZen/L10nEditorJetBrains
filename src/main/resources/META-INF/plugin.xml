@@ -1,0 +1,41 @@
+<idea-plugin>
+    <id>com.l10n.editor.plugin</id>
+    <name>L10n Editor</name>
+    <vendor email="support@example.com" url="https://example.com">L10n Editor</vendor>
+
+    <description><![CDATA[
+    L10n localization file editor with AI translation support.
+
+    Features:
+    - TSV-based l10n file format
+    - AI translation (OpenAI, Claude, Baidu)
+    - C# code generation
+    - Toolbar actions for common operations
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- File Type -->
+        <fileType name="L10nFile" implementationClass="com.l10n.plugin.L10nFileType"
+                  fieldName="INSTANCE" language="L10n" extensions="l10n.tsv"/>
+
+        <!-- Editor Notification - Toolbar above editor -->
+        <editorNotificationProvider implementation="com.l10n.plugin.editor.L10nEditorNotificationProvider"/>
+
+        <!-- Settings -->
+        <applicationConfigurable parentId="tools" instance="com.l10n.plugin.settings.L10nSettingsConfigurable"
+                                 id="com.l10n.plugin.settings.L10nSettingsConfigurable"
+                                 displayName="L10n Editor"/>
+
+        <!-- Application Service -->
+        <applicationService serviceImplementation="com.l10n.plugin.settings.L10nSettings"/>
+    </extensions>
+
+    <actions>
+        <!-- New File Action -->
+        <action id="L10n.NewFile" class="com.l10n.plugin.actions.NewL10nFileAction" text="L10n File">
+            <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFile"/>
+        </action>
+    </actions>
+</idea-plugin>
