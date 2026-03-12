@@ -5,6 +5,7 @@ out/
 
 # IDE files
 .idea/
+.intellijPlatform/
 *.iml
 *.ipr
 *.iws
